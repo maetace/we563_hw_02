@@ -25,11 +25,60 @@ class SignUpPage extends GetView<SignUpController> {
                 height: 48,
                 color: Colors.white,
               ),
+              // Full Name TextFormField
+              TextFormField(
+                key: controller.fullNameKey,
+                validator: controller.fullNameValidator,
+                controller: controller.fullNameController,
+                onChanged: controller.onFullNameChanged,
+                decoration: InputDecoration(
+                  labelText: 'Full Name',
+                  labelStyle: TextStyle(color: Colors.white),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white),
+                  ),
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white),
+                  ),
+                  errorBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white),
+                  ),
+                  focusedErrorBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white),
+                  ),
+                ),
+                style: TextStyle(color: Colors.white),
+              ),
+              // Email TextFormField
+              TextFormField(
+                key: controller.emailKey,
+                validator: controller.emailValidator,
+                controller: controller.emailController,
+                onChanged: controller.onEmailChanged,
+                decoration: InputDecoration(
+                  labelText: 'Email',
+                  labelStyle: TextStyle(color: Colors.white),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white),
+                  ),
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white),
+                  ),
+                  errorBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white),
+                  ),
+                  focusedErrorBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white),
+                  ),
+                ),
+                style: TextStyle(color: Colors.white),
+              ),
+              // Username TextFormField
               TextFormField(
                 key: controller.usernameKey,
-                validator: controller.usernameVlaidator,
-                onChanged: controller.onUsernameChanged,
+                validator: controller.usernameValidator,
                 controller: controller.usernameController,
+                onChanged: controller.onUsernameChanged,
                 decoration: InputDecoration(
                   labelText: 'Username',
                   labelStyle: TextStyle(color: Colors.white),
@@ -48,6 +97,7 @@ class SignUpPage extends GetView<SignUpController> {
                 ),
                 style: TextStyle(color: Colors.white),
               ),
+              // Password TextFormField + Visibility Toggle
               Obx(() => TextFormField(
                     key: controller.passwordKey,
                     validator: controller.passwordValidator,
@@ -89,6 +139,7 @@ class SignUpPage extends GetView<SignUpController> {
                   SizedBox(
                     width: 12,
                   ),
+                  // Sign Up Button
                   Expanded(
                     child: ElevatedButton(
                       onPressed: controller.onSignUpPressed,
@@ -115,62 +166,3 @@ class SignUpPage extends GetView<SignUpController> {
     );
   }
 }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: Colors.blue,
-//       body: Padding(
-//         padding: const EdgeInsets.all(48.0),
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           crossAxisAlignment: CrossAxisAlignment.center,
-//           children: [
-//             Text(
-//               'This is sign up page',
-//               style: Theme.of(context).textTheme.titleLarge,
-//             ),
-//             SizedBox(
-//               height: 24,
-//             ),
-//             Row(
-//               children: [
-//                 Expanded(
-//                   child: ElevatedButton(
-//                     onPressed: controller.onBackPressed,
-//                     style: ElevatedButton.styleFrom(
-//                       shape: RoundedRectangleBorder(
-//                           borderRadius: BorderRadius.circular(4)),
-//                       backgroundColor: Colors.white,
-//                       foregroundColor: Colors.blue,
-//                       elevation: 0,
-//                       side: BorderSide(color: Colors.blue.shade200),
-//                     ),
-//                     child: Text('Back'),
-//                   ),
-//                 ),
-//                 SizedBox(
-//                   width: 12,
-//                 ),
-//                 Expanded(
-//                   child: ElevatedButton(
-//                     onPressed: controller.onSignUpPressed,
-//                     style: ElevatedButton.styleFrom(
-//                       shape: RoundedRectangleBorder(
-//                           borderRadius: BorderRadius.circular(4)),
-//                       backgroundColor: Colors.white,
-//                       foregroundColor: Colors.blue,
-//                       elevation: 0,
-//                       side: BorderSide(color: Colors.blue.shade200),
-//                     ),
-//                     child: Text('Sign Up'),
-//                   ),
-//                 ),
-//               ],
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }

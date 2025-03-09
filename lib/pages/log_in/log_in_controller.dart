@@ -15,7 +15,7 @@ class LogInController extends GetxController {
       return;
     }
 
-    if (usernameController.text != '@demo') {
+    if (usernameController.text != '@userdemo') {
       Get.snackbar(
         'Login Failed',
         'The username you entered does not exist. Please check and try again.',
@@ -23,7 +23,7 @@ class LogInController extends GetxController {
       );
       return;
     }
-    if (passwordController.text != 'Passwd12@') {
+    if (passwordController.text != '1q2w3e4r') {
       Get.snackbar(
         'Login Failed',
         'Incorrect username or password. Please try again.',
@@ -43,8 +43,8 @@ class LogInController extends GetxController {
       return 'Please enter your username';
     }
 
-    if (value.length < 5) {
-      return 'Username must be at least 5 characters long';
+    if (value.length < 3) {
+      return 'Username must be at least 3 characters long';
     }
 
     if (!value.startsWith('@')) {
@@ -78,15 +78,7 @@ class LogInController extends GetxController {
     if (value.length < 8) {
       return 'Password must be at least 8 characters long';
     }
-    if (!RegExp(r'[A-Za-z]').hasMatch(value)) {
-      return 'Password must contain at least one letter';
-    }
-    if (!RegExp(r'[0-9]').hasMatch(value)) {
-      return 'Password must contain at least one number';
-    }
-    if (!RegExp(r'[!@#$%^&*(),.?":{}|<>]').hasMatch(value)) {
-      return 'Password must contain at least one special character';
-    }
+
     return null;
   }
 }
